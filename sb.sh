@@ -1,6 +1,8 @@
 #!/bin/bash
 # Copyright (C) 2012 Crowd9 Pty Ltd
 
+set -x
+
 echo "
 ###############################################################################
 #               ServerBear (http://serverbear.com) benchmarker                #
@@ -92,7 +94,7 @@ function require_download() {
 require_download UnixBench $UNIX_BENCH_DIR https://github.com/HansAdema/Benchmark/raw/master/UnixBench$UNIX_BENCH_VERSION-patched.tgz
 mv -f UnixBench $UNIX_BENCH_DIR 2>/dev/null
 
-mkdir $FIO_DIR
+mkdir -p $FIO_DIR
 
 cat > $FIO_DIR/reads.ini << EOF
 [global]
